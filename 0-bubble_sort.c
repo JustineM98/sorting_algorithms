@@ -1,19 +1,22 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "sort.h"
 /**
-* bubble_sort - a function that sorts an array of integers in
-* ascending order using the Bubble sort algorithm
-* @array: array of integers
-* @size: size of array
-**/
-
+ * bubble_sort - sort an int array with bubble_sort
+ * @array: array of integers of size
+ * @size: the sze of the array
+ *
+ */
 void bubble_sort(int *array, size_t size)
 {
-	size_t i, j;
+	/* declarations */
 	int temp;
+	size_t i, j;
 
-	for (i = 0; i < size - 1; i++)
+	/* check for both array & size */
+	if (!(array && size))
+		return;
+
+	/* let's sort this thing */
+	for (i = 0; i < size;)
 	{
 		for (j = 0; j < size - 1; j++)
 		{
@@ -25,5 +28,6 @@ void bubble_sort(int *array, size_t size)
 				print_array(array, size);
 			}
 		}
+		i++;
 	}
 }
